@@ -40,9 +40,9 @@ for (let service=0; service<dis.length; service++){
                             <i class="cardHeart fa-regular fa-heart text-lg"></i>
                         </div>
                         <h2 class="serviceName card-title">${allData.title1[service]}</h2>
-                        <p>${allData.dis[service]}</p>
+                        <p class='text-neutral-600'>${allData.dis[service]}</p>
                         <h2 class="serviceNumber card-title">${allData.hotlineNumber[service]}</h2>
-                        <p>${allData.dis2[service]}</p>
+                        <p class='text-neutral-600'>${allData.dis2[service]}</p>
                         <div class="card-actions justify-end grid grid-cols-2">            
                             <button class="copy btn btn-primary bg-gray-100 text-gray-600 border-none"><i class="fa-solid fa-copy"></i> Copy</button>
                             <button class="call btn btn-primary bg-green-600 border-none"><i class="fa-solid fa-phone"></i> Call</button>
@@ -73,13 +73,35 @@ for (let heartPoint of heartPoints ){
 
 for (let callClick of callClicks ){
     callClick.addEventListener('click', function(e){
-        serviceNumber = callClick.parentNode.parentNode.getElementsByClassName('serviceNumber')[0].innerText
-        serviceName = callClick.parentNode.parentNode.getElementsByClassName('serviceName')[0].innerText
-        alert(`📞 Calling ${serviceName} ${serviceNumber}...`)
-
         gold = getElement('gold')[0]
+        if (gold.innerText < 20) {
+            alert(`you do not have enough coins you need minimum 20 coins`)
+        }
+        else{
 
-        gold.innerText = gold.innerText - 20
+            let serviceNumber = callClick.parentNode.parentNode.getElementsByClassName('serviceNumber')[0].innerText
+            let serviceName = callClick.parentNode.parentNode.getElementsByClassName('serviceName')[0].innerText
+            let time = new Date().toLocaleTimeString()
+            alert(`📞 Calling ${serviceName} ${serviceNumber}...`)
+            gold.innerText = gold.innerText - 20
+            
+            let history = getElement('history')[0]
+            let newHistory = document.createElement('div')
+            
+            newHistory.innerHTML = `
+            <div class="flex flex-row justify-between items-center card bg-base-200 sm:mt-6 mt-3 p-3">
+                <div>
+                    <p class="font-semibold text-lg">${serviceName}</p>
+                    <p class="text-neutral-600 font-normal">${serviceNumber}</p>
+                </div>
+                <p class="hind-madurai-regular">${time}</p>
+
+            </div>
+            `
+            history.appendChild(newHistory)
+
+        }
+        
 })
 }
 
