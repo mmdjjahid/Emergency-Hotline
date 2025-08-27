@@ -55,10 +55,6 @@ for (let service=0; service<dis.length; service++){
 
 
 
-copy = getElement('copy')[0].innerText
-
-
-
 
 let heartPoints = getElement('cardHeart')
 let callClicks = getElement("call")
@@ -105,3 +101,20 @@ for (let callClick of callClicks ){
 })
 }
 
+getElement('clearBtn')[0].addEventListener('click', function (){
+    let parent = getElement('history')[0]
+    parent.innerHTML = ''
+})
+
+
+let copyBtns = getElement('copy')
+
+for (let copyBtn of copyBtns){
+    copyBtn.addEventListener('click', function(){
+        let serviceNumber = copyBtn.parentNode.parentNode.getElementsByClassName('serviceNumber')[0].innerText
+        let copyCounter = getElement('copyNum')[0]
+        copyCounter.innerText = parseInt(copyCounter.innerText) + 1
+        navigator.clipboard.writeText(serviceNumber)
+        alert(`Number copy is complete: ${serviceNumber}`)
+    })
+}
