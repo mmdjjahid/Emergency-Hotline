@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+        .inter-font {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        }
+        .hind-madurai-regular {
+        font-family: "Hind Madurai", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+
+    </style>
+    
+</head>
+<body class="max-w-screen-3xl mx-auto ">
+    <header class="flex justify-between items-center py-6 sm:px-14 px-3">
+        <div class="flex justify-center items-center gap-1">
+            <img class="w-12 h-12" src="./assets/logo.png" alt="" srcset="">
+            <p class="font-extrabold text-green-700 leading-tight">Emergency<br>Services</p>
+        </div>
+        <div class="flex justify-center items-center gap-3 sm:gap-16">
+            <div class="flex justify-center items-center gap-1">
+                <p class="font-bold inter-font">0</p>
+                <i class="fa-solid fa-heart text-red-600"></i>
+            </div>
+            <div class="flex justify-center items-center gap-1">
+                <p class="font-bold inter-font">100</p>
+                <img src="./assets/coin.png" class="w-6 h-6" alt="">
+            </div>
+            <button class="btn rounded-full text-white bg-green-600 px-5 sm:px-9 py-3 font-bold">0 Copy</button>
+
+        </div>
+    </header >
+        
+    <section class="hind-madurai-regular text-white text-center px-3 py-5 flex justify-center items-center flex-col bg-gradient-to-r from-emerald-950 via-emerald-800 to-green-950">
+        <img class="w-24 h-24" src="./assets/logo-dark.png" alt="" srcset="">
+        <p class="font-bold text-xl sm:text-4xl my-3">Emergency Service Directory</p>
+        <p class="font-semibold text-sm sm:text-xl">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+
+    </section>
+
+    <main class="grid grid-cols-12 px-20 py-16 gap-6">
+
+        <div class="col-span-9">
+            <div>
+                <div class="card bg-base-100 w-96 shadow-sm">
+                    <div class="card-body">
+                        <img class="w-8 h-8" src="./assets/fire-service.png" alt="">
+                        <h2 class="card-title">Fire Service Number</h2>
+                        <p>Fire Service</p>
+                        <h2 class="card-title">999</h2>
+                        <p>Fire</p>
+                        <div class="card-actions justify-end">            
+                            <button class="btn btn-primary bg-gray-100 text-gray-600 border-none"><i class="fa-solid fa-copy"></i> Copy</button>
+                            <button class="btn btn-primary bg-green-600 px-16 border-none"><i class="fa-solid fa-phone"></i> Call</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-span-3">
+            <div class="flex justify-between items-center ">
+                <div class="p-6 flex justify-center items-center gap-1">
+                    <i class="fa-solid fa-clock-rotate-left font-light"></i>
+                    <p class="font-bold">Call History</p>
+                </div>
+                <button class="btn rounded-full text-white bg-green-600 px-5 sm:px-9 py-3 font-bold">Clear</button>
+            </div>
+            
+        </div>
+        
+    </main>
+    
+</body>
+</html>
