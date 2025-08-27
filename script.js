@@ -2,11 +2,6 @@ function getElement (name){
    return document.getElementsByClassName(name)
 }
 
-
-copy = getElement('copy')[0].innerText
-gold = getElement('gold')[0].innerText
-
-
 let title1 = ['National Emergency Number', 'Police Helpline Number', 'Fire Service Number', 'Ambulance Service', 'Women & Child Helpline', 'Anti-Corruption Helpline', 'Electricity Helpline', 'Brac Helpline', 'Bangladesh Railway Helpline ']
 let dis = ['National Emergency', 'Police', 'Fire Service', 'Ambulance', 'Women & Child Helpline', 'Anti-Corruption', 'Electricity Outage', 'Brac', 'Bangladesh Railway']
 let hotlineNumber = [999, 999, 999, '1994-999999', 109, 106, 16216, 16445, 163]
@@ -44,9 +39,9 @@ for (let service=0; service<dis.length; service++){
                             </figure>
                             <i class="cardHeart fa-regular fa-heart text-lg"></i>
                         </div>
-                        <h2 class="card-title">${allData.title1[service]}</h2>
+                        <h2 class="serviceName card-title">${allData.title1[service]}</h2>
                         <p>${allData.dis[service]}</p>
-                        <h2 class="card-title">${allData.hotlineNumber[service]}</h2>
+                        <h2 class="serviceNumber card-title">${allData.hotlineNumber[service]}</h2>
                         <p>${allData.dis2[service]}</p>
                         <div class="card-actions justify-end grid grid-cols-2">            
                             <button class="copy btn btn-primary bg-gray-100 text-gray-600 border-none"><i class="fa-solid fa-copy"></i> Copy</button>
@@ -58,7 +53,16 @@ for (let service=0; service<dis.length; service++){
         serviceCard.appendChild(newsService)
 }
 
-heartPoints = getElement('cardHeart')
+
+
+copy = getElement('copy')[0].innerText
+
+
+
+
+let heartPoints = getElement('cardHeart')
+let callClicks = getElement("call")
+
 
 for (let heartPoint of heartPoints ){
     heartPoint.addEventListener('click', function(){
@@ -67,4 +71,15 @@ for (let heartPoint of heartPoints ){
 })
 }
 
+for (let callClick of callClicks ){
+    callClick.addEventListener('click', function(e){
+        serviceNumber = callClick.parentNode.parentNode.getElementsByClassName('serviceNumber')[0].innerText
+        serviceName = callClick.parentNode.parentNode.getElementsByClassName('serviceName')[0].innerText
+        alert(`📞 Calling ${serviceName} ${serviceNumber}...`)
+
+        gold = getElement('gold')[0]
+
+        gold.innerText = gold.innerText - 20
+})
+}
 
