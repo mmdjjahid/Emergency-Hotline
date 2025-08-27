@@ -2,10 +2,9 @@ function getElement (name){
    return document.getElementsByClassName(name)
 }
 
-heart = getElement('heart')[0].innerText
+
 copy = getElement('copy')[0].innerText
 gold = getElement('gold')[0].innerText
-console.log(heart, copy, gold)
 
 
 let title1 = ['National Emergency Number', 'Police Helpline Number', 'Fire Service Number', 'Ambulance Service', 'Women & Child Helpline', 'Anti-Corruption Helpline', 'Electricity Helpline', 'Brac Helpline', 'Bangladesh Railway Helpline ']
@@ -43,7 +42,7 @@ for (let service=0; service<dis.length; service++){
                             <figure class="p-3 rounded-2xl ${iconColor}">
                                 <img class="w-8 h-8 " src="${icon}" alt="">
                             </figure>
-                            <i class="fa-regular fa-heart text-lg"></i>
+                            <i class="cardHeart fa-regular fa-heart text-lg"></i>
                         </div>
                         <h2 class="card-title">${allData.title1[service]}</h2>
                         <p>${allData.dis[service]}</p>
@@ -58,3 +57,14 @@ for (let service=0; service<dis.length; service++){
         `
         serviceCard.appendChild(newsService)
 }
+
+heartPoints = getElement('cardHeart')
+
+for (let heartPoint of heartPoints ){
+    heartPoint.addEventListener('click', function(){
+        heart = getElement('heart')[0]
+        heart.innerText = parseInt(heart.innerText) + 1
+})
+}
+
+
