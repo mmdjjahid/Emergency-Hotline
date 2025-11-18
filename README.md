@@ -1,44 +1,69 @@
-**Answering the questions** 
-============================
+## Project Overview  
+This project is a web‑based platform for emergency contact services where users can quickly access, call or view emergency hotlines (e.g., police, ambulance, fire) relevant to their region. It aims to provide a simple, responsive interface (including light/dark mode) designed for rapid access in urgent situations.
 
-1.  **_What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?_**
-2.  **_How do you create and insert a new element into the DOM?_**
-3.  **_What is Event Bubbling and how does it work?_**
-4.  **_What is Event Delegation in JavaScript? Why is it useful?_**
-5.  **_What is the difference between preventDefault() and stopPropagation() methods?_**
+## Main Technology  
+- **Frontend:** React (Vite)  
+- **Routing:** React Router  
+- **Styling:** Tailwind CSS + daisyUI  
+- **HTTP/Data Fetching:** Axios  
+- **Toast Notifications:** React Toastify  
+- **Animations:** Framer Motion  
+- **Backend:** Node.js + Express.js  
+- **Database:** MongoDB  
+- **Middleware:** CORS, dotenv
 
-**1\. Answer**
+## Main Features  
+- **Emergency Hotline Listing:** View a list of emergency services with phone numbers by category (e.g., police, ambulance, fire)  
+- **Region/Location Filtering:** Narrow down hotlines by region or location (if implemented)  
+- **Call or Copy Functionality:** Tap to call or copy the hotline number for convenience  
+- **Search Functionality:** Search by service type or location  
+- **Responsive Design:** Works across mobile and desktop, supports light & dark theme  
+- **Custom 404 Page:** User‑friendly fallback for undefined routes
 
-*   getElementById: it collect single element by id 
-*   getElementsByClassName: it collect HTMLCollection element by class
-*   querySelector: it collect first element by CSS selector
-*   querySelectorAll: it collect all element NodeList by CSS selector
+## Dependencies (Frontend)  
+```json
+{
+  "dependencies": {
+    "react": "...",
+    "react-dom": "...",
+    "react-router-dom": "...",
+    "axios": "...",
+    "react-toastify": "...",
+    "framer-motion": "...",
+    "daisyui": "...",
+    "tailwindcss": "...",
+    ...
+  },
+  "devDependencies": {
+    "vite": "...",
+    "eslint": "...",
+    ...
+  }
+}
+```
+## Local Setup Guide
 
-  
+Follow these steps to set up the project on your local machine:
 
-**2\. Answer**
+## Clone the repository:
 
-for create the elements use document.createElement() and insert use parents.appendChild(child)
+git clone https://github.com/mmdjjahid/Emergency-Hotline
 
-  
+Navigate to the project folder and install dependencies using npm or yarn:
 
-**3\. Answer**
+cd Emergency-Hotline
+npm install
 
-Event bubbling is a process in the DOM where an event call on an element first executes it self and then executes its parent event then its grandparent etc.
 
-for example: i have 3 nested div top,middle,inner and i place a onclick() on all div. now if i click inner div then 1st execute inner then middle and top div it call Event bubbling.
+## Set up environment variables:
+If the project requires any environment variables (such as API endpoints), create a .env file and set the necessary variables. For example:
 
-  
+API_BASE_URL=http://localhost:3010
 
-**4\. Answer**
 
-Event Delegation is a process in the DOM where a parent event call and terget there chaild event.
+## Run the development server:
 
-for example: in a ul has multiple li. and i want to add there more li and change different style on those li. i can do it with Event Delegation. just add a event in ul and terget all li under ul then it's work properly.
+npm run dev
 
-  
 
-**5\. Answer**
-
-*   preventDefault(): it stop default behavior on the event
-*   stopPropagation():  it stop Event bubbling up on the parent
+Open the app in your browser at http://localhost:5173 (or the appropriate Vite server address).
